@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ImageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('default',['name' => '<i>samanta</i>','records' => [0,2]]);
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.index');
 });
-Route::post('/image/upload',[ImageController::class,'upload'])->name('image.upload');
+Route::get('/', function () {
+    return view('default', ['name' => '<i>samanta</i>', 'records' => [0, 2]]);
+});
+Route::post('/image/upload', [ImageController::class, 'upload'])->name('image.upload');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
