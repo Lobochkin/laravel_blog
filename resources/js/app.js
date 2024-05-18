@@ -5,6 +5,21 @@
  */
 
 require('./bootstrap');
+window.ClassicEditor = require( '@ckeditor/ckeditor5-build-classic' );
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector( '#description_short' )){
+        ClassicEditor.create( document.querySelector( '#description_short' ) ).catch( error => {
+            console.error( error );
+        } );
+    }
+    if (document.querySelector( '#description' )){
+        ClassicEditor.create( document.querySelector( '#description' ) ).catch( error => {
+            console.error( error );
+        } );
+    }
+
+})
+
 const Vue = require('vue');
 const app = Vue.createApp({})
 /**

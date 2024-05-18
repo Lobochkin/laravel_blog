@@ -14,7 +14,6 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -35,14 +34,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
+                    <div class="">
+                        <a class="nav-link " href="{{route('admin.index')}}" >
+                            Панель состояния
+                        </a>
+                    </div>
                     <div class="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Блог
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Категории</a></li>
-                            <li><a class="dropdown-item" href="#">Материалы</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a></li>
                         </ul>
                     </div>
                 </ul>

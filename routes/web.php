@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.index');
+    Route::resource('/category','App\Http\Controllers\Admin\CategoryController',['as' => 'admin']);
+    Route::resource('/article','App\Http\Controllers\Admin\ArticleController',['as' => 'admin']);
 });
+
 Route::get('/', function () {
     return view('default', ['name' => '<i>samanta</i>', 'records' => [0, 2]]);
 });
