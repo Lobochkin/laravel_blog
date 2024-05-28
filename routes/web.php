@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/blog/category/{slug?}',[\App\Http\Controllers\BlogController::class,'category'])->name('category');
+Route::get('/blog/article/{slug?}',[\App\Http\Controllers\BlogController::class,'article'])->name('article');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.index');
     Route::resource('/category','App\Http\Controllers\Admin\CategoryController',['as' => 'admin']);
