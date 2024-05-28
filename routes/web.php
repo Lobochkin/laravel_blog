@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,12 +22,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('/category','App\Http\Controllers\Admin\CategoryController',['as' => 'admin']);
     Route::resource('/article','App\Http\Controllers\Admin\ArticleController',['as' => 'admin']);
 });
-
 Route::get('/', function () {
-    return view('default', ['name' => '<i>samanta</i>', 'records' => [0, 2]]);
+    return view('blog.home');
 });
 Route::post('/image/upload', [ImageController::class, 'upload'])->name('image.upload');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

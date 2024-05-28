@@ -49,6 +49,7 @@
                             <li><a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a></li>
                         </ul>
                     </div>
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
