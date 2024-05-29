@@ -23,6 +23,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.index');
     Route::resource('/category','App\Http\Controllers\Admin\CategoryController',['as' => 'admin']);
     Route::resource('/article','App\Http\Controllers\Admin\ArticleController',['as' => 'admin']);
+    Route::group(['prefix' => 'user_management'],function () {
+        Route::resource('/user','\App\Http\Controllers\Admin\UserManagement\UserController',['as' => 'admin.user_management']);
+    });
 });
 Route::get('/', function () {
     return view('blog.home');

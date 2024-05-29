@@ -49,6 +49,15 @@
                             <li><a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a></li>
                         </ul>
                     </div>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Управление пользователями
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{route('admin.user_management.user.index')}}">Пользователи</a></li>
+                        </ul>
+                    </div>
 
                 </ul>
 
