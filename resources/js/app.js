@@ -5,6 +5,8 @@
  */
 
 require('./bootstrap');
+
+
 window.ClassicEditor = require( '@ckeditor/ckeditor5-build-classic' );
 document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector( '#description_short' )){
@@ -33,7 +35,9 @@ const app = Vue.createApp({})
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+
 app.component('example-component', require('./components/ExampleComponent.vue').default);
+app.component('prop-component', require('./components/PropComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -46,4 +50,5 @@ app.component('example-component', require('./components/ExampleComponent.vue').
 // });
 
 
-app.mount('#app')
+app.mount('#app');
+

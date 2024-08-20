@@ -31,8 +31,9 @@ Route::get('/', function () {
     return view('blog.home');
 });
 Route::post('/image/upload', [ImageController::class, 'upload'])->name('image.upload');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/start', [App\Http\Controllers\StartController::class, 'index'])->name('start');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 

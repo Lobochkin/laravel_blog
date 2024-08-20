@@ -9,7 +9,7 @@
             @slot('active') Пользователи @endslot
         @endcomponent
 
-        <a href="{{route('admin.user_management.user.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Создать пользователя</a>
+        <a href="{{route('admin.user_management.user.create')}}" class="btn btn-primary pull-right mb-3"><i class="fa fa-plus-square-o"></i> Создать пользователя</a>
         <table class="table table-hover table-bordered">
             <thead>
             <th>Имя</th>
