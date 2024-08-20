@@ -5,8 +5,22 @@ window._ = require('lodash');
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 try {
+    window.$ = window.jQuery = require('jquery');
     require('bootstrap');
-} catch (e) {}
+    require('owl.carousel');
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items:1,
+            loop:false,
+            margin:10,
+            URLhashListener:true,
+            autoplayHoverPause:true,
+            startPosition: 'URLHash'
+        });
+    });
+} catch (e) {
+    console.error('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack);
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

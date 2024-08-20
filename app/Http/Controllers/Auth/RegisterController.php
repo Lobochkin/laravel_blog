@@ -30,6 +30,13 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    protected function redirectTo(): string
+    {
+        if (auth()->user()->role == 'admin') {
+            return RouteServiceProvider::ADMIN;
+        }
+        return RouteServiceProvider::HOME;
+    }
 
     /**
      * Create a new controller instance.
@@ -52,7 +59,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
 
