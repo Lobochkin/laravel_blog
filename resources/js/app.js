@@ -38,6 +38,10 @@ const app = Vue.createApp({})
 
 app.component('example-component', require('./components/ExampleComponent.vue').default);
 app.component('prop-component', require('./components/PropComponent.vue').default);
+app.component('ajax-component', require('./components/AjaxComponent.vue').default);
+app.component('chart-line-component', require('./components/ChartLineComponent.vue').default);
+app.component('chart-pie-component', require('./components/ChartPieComponent.vue').default);
+app.component('chart-random-component', require('./components/ChartRandomComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
