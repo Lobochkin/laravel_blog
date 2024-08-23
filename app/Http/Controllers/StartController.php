@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewEvent;
 use Illuminate\Http\Request;
 
 class StartController extends Controller
@@ -85,5 +86,32 @@ class StartController extends Controller
                 ]
             ]
         ];
+    }
+    public function newEvent(Request $request)
+    {
+        $result = [
+            'labels' => ['January', 'February', 'March','April','May'],
+            'datasets' => [
+                [
+                    'tension' => 0.3,
+                    'borderColor'=> '#f87979',
+                    'label' => 'Sales',
+                    'backgroundColor' => '#f87979',
+                    'data' => [40, 20, 12,30,35],
+                    'fill' => true
+                ]
+            ]
+        ];
+
+        if ($request->has('label') && $request->has('sale')) {
+            $result['labels'][] = $request->input('label');
+            $result['datasets'][0]['data'][] = intval($request->input('sale'));
+
+            if ($request->has('realtime') && filter_var($request->input('realtime'),FILTER_VALIDATE_BOOLEAN)) {
+                event(new NewEvent($result));
+            }
+        }
+
+        return $result;
     }
 }

@@ -8,6 +8,9 @@
         <div class="col-sm-4">
             <h2 class="border-bottom text-center">ChartJs: Vue+Laravel</h2>
         </div>
+        <div class="col-sm-4">
+            <h2 class="border-bottom text-center">Realtime + Vue + Laravel</h2>
+        </div>
     </div>
     <div class="row">
         <div class="col-sm-4">
@@ -28,13 +31,13 @@
                 </div>
             </div>
         </div>
-{{--        <div class="col-sm-4">--}}
-{{--            <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">--}}
-{{--                <div class="btn-group mr-2" role="group" aria-label="First group">--}}
-{{--                    --}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        <div class="col-sm-4">
+            <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <a href="#7" class="btn btn-success" type="button">ChartJs</a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
@@ -95,6 +98,16 @@
                             <div class="card-body" style="min-height: 720px;">
                                 <h2 class="text-center">#6 ChartJS(Line) & VueJs *ajax + trigger + reload</h2>
                                 <chart-random-component></chart-random-component>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-2" data-hash="7">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body" style="min-height: 720px;">
+                                <h2 class="text-center">#7 Realtime ChartJS(Line) & VueJs *ajax + trigger + reload</h2>
+                                <socket-component></socket-component>
                             </div>
                         </div>
                     </div>

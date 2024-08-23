@@ -35,9 +35,9 @@
         "ioredis": "^5.4.1",
         "jquery": "^3.7.1",
         "npm": "^10.2.5",
-        "or": "^0.2.0",
         "owl.carousel": "^2.3.4",
         "socket.io": "^4.7.5",
+        "socket.io-client": "^4.7.5",
         "vue-chartjs": "^5.3.1",
         "yarn": "^1.22.22"
     }
