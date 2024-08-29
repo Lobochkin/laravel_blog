@@ -5,6 +5,7 @@ var io = require('socket.io')(http,{
         credentials: true,
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
+
     }
 });
 var Redis = require('ioredis');
@@ -14,7 +15,7 @@ redis.on('message', function(channel,message) {
     console.log('Message received: ' + message);
     console.log('Name chanel : ' + channel);
     message = JSON.parse(message);
-    io.emit(channel + ':' + message.event,message.data)
+    io.emit(channel + ':' + message.event,message.data) // отправка всем клиентам
 })
 
 http.listen(3000, function() {

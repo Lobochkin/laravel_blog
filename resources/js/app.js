@@ -43,6 +43,7 @@ app.component('chart-line-component', require('./components/ChartLineComponent.v
 app.component('chart-pie-component', require('./components/ChartPieComponent.vue').default);
 app.component('chart-random-component', require('./components/ChartRandomComponent.vue').default);
 app.component('socket-component', require('./components/SocketComponent.vue').default);
+app.component('socket-chat-component', require('./components/SocketChatComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

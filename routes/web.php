@@ -38,6 +38,7 @@ Route::get('/start/data-chart', [App\Http\Controllers\StartController::class, 'c
 Route::get('/start/data-chart-js', [App\Http\Controllers\StartController::class, 'chartJs']);
 Route::get('/start/data-chart-random', [App\Http\Controllers\StartController::class, 'chartRandom']);
 Route::get('/start/socket-chart', [App\Http\Controllers\StartController::class, 'newEvent']);
+Route::get('/start/send-message', [App\Http\Controllers\StartController::class, 'sendMessage']);
 Auth::routes();
 
 

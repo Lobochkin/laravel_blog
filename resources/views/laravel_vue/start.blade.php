@@ -35,6 +35,7 @@
             <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
                     <a href="#7" class="btn btn-success" type="button">ChartJs</a>
+                    <a href="#8" class="btn btn-success" type="button">Chat</a>
                 </div>
             </div>
         </div>
@@ -108,6 +109,16 @@
                             <div class="card-body" style="min-height: 720px;">
                                 <h2 class="text-center">#7 Realtime ChartJS(Line) & VueJs *ajax + trigger + reload</h2>
                                 <socket-component></socket-component>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-2" data-hash="8">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body" style="min-height: 720px;">
+                                <h2 class="text-center">#8 Realtime Chat VueJs *ajax + trigger + reload</h2>
+                                <socket-chat-component></socket-chat-component>
                             </div>
                         </div>
                     </div>
