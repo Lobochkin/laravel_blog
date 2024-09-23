@@ -14,14 +14,16 @@ class NewEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $result;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(public $result)
+    public function __construct($result)
     {
+        $this->result = $result;
     }
 
     /**

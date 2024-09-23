@@ -11,6 +11,11 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 @include('layouts.top_menu',$categories)
+                <div class="nav-item ">
+                    <a class="nav-link " href="{{route('start')}}">
+                        Vue + Realtime
+                    </a>
+                </div>
             </ul>
 
             <!-- Right Side Of Navbar -->

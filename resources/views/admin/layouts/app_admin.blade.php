@@ -58,6 +58,11 @@
                             <li><a class="dropdown-item" href="{{route('admin.user_management.user.index')}}">Пользователи</a></li>
                         </ul>
                     </div>
+                    <div class="nav-item ">
+                        <a class="nav-link " href="{{route('start')}}">
+                            Vue + Realtime
+                        </a>
+                    </div>
 
                 </ul>
 

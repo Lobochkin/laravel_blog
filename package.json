@@ -34,6 +34,7 @@
         "font-awesome": "^4.7.0",
         "ioredis": "^5.4.1",
         "jquery": "^3.7.1",
+        "laravel-echo": "^1.16.1",
         "npm": "^10.2.5",
         "owl.carousel": "^2.3.4",
         "socket.io": "^4.7.5",

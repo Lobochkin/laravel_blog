@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Events\NewEvent;
 use App\Events\NewMessage;
+use App\Events\PrivateMessage;
 use Illuminate\Http\Request;
 
 class StartController extends Controller
 {
-    public function index(
-    ): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function index()
     {
         $urlData = [
             [
@@ -117,5 +117,11 @@ class StartController extends Controller
     {
         event(new NewMessage($request->input('message')));
 
+    }
+    public function sendPrivateMessage(Request $request)
+    {
+        PrivateMessage::dispatch($request->all());
+
+        return $request->all();
     }
 }

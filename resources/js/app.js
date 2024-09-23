@@ -36,14 +36,13 @@ const app = Vue.createApp({})
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 
-app.component('example-component', require('./components/ExampleComponent.vue').default);
-app.component('prop-component', require('./components/PropComponent.vue').default);
-app.component('ajax-component', require('./components/AjaxComponent.vue').default);
 app.component('chart-line-component', require('./components/ChartLineComponent.vue').default);
 app.component('chart-pie-component', require('./components/ChartPieComponent.vue').default);
 app.component('chart-random-component', require('./components/ChartRandomComponent.vue').default);
 app.component('socket-component', require('./components/SocketComponent.vue').default);
 app.component('socket-chat-component', require('./components/SocketChatComponent.vue').default);
+app.component('socket-private-component', require('./components/SocketPrivateComponent.vue').default);
+app.component('chat-component', require('./components/ChatComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
