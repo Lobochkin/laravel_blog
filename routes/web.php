@@ -39,6 +39,17 @@ Route::get('/start/data-chart-random', [App\Http\Controllers\StartController::cl
 Route::get('/start/socket-chart', [App\Http\Controllers\StartController::class, 'newEvent']);
 Route::get('/start/send-message', [App\Http\Controllers\StartController::class, 'sendMessage']);
 Route::get('/start/send-private-message', [App\Http\Controllers\StartController::class, 'sendPrivateMessage']);
+Route::post('/start/message', [App\Http\Controllers\StartController::class, 'sendEhoMessage']);
+Route::middleware(['web','auth'])->group( function () {
+    Route::get('/count', [App\Http\Controllers\CountController::class, 'index'])->name('count');
+    Route::post('/count/getData', [App\Http\Controllers\CountController::class, 'getData']);
+    Route::post('/count/getPrice', [App\Http\Controllers\CountController::class, 'getPrice']);
+    Route::post('/count/delPrice', [App\Http\Controllers\CountController::class, 'delPrice']);
+    Route::post('/count/setPrice', [App\Http\Controllers\CountController::class, 'setPrice']);
+    Route::post('/count/delRowCount', [App\Http\Controllers\CountController::class, 'delRowCount']);
+    Route::post('/count/editData', [App\Http\Controllers\CountController::class, 'editData']);
+    Route::post('/count/addData', [App\Http\Controllers\CountController::class, 'addData']);
+});
 Auth::routes();
 
 

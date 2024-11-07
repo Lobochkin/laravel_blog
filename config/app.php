@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         // Own providers
         \App\Providers\BlogServiceProvider::class,
+        // Генерация моделей из существующих таблиц
+        Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
 
     ],
 

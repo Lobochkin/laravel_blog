@@ -24,6 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const Vue = require('vue');
 const app = Vue.createApp({})
+import store from './store';
+import PrimeVue from 'primevue/config';
+import DatePicker from 'primevue/datepicker';
+import InputNumber from 'primevue/inputnumber';
+import Aura from '@primevue/themes/aura';
+import Button from 'primevue/button';
+import Calendar from 'primevue/calendar';
+import moment from 'moment';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -43,6 +52,15 @@ app.component('socket-component', require('./components/SocketComponent.vue').de
 app.component('socket-chat-component', require('./components/SocketChatComponent.vue').default);
 app.component('socket-private-component', require('./components/SocketPrivateComponent.vue').default);
 app.component('chat-component', require('./components/ChatComponent.vue').default);
+app.component('count-component', require('./components/CountComponent.vue').default);
+app.component('price-component', require('./components/PriceComponent.vue').default);
+app.component('popap-component', require('./components/PopapComponent.vue').default);
+app.component('tr-count', require('./components/TrCount.vue').default);
+app.component('DatePicker', DatePicker);
+app.component('InputNumber', InputNumber);
+app.component('Button', Button);
+app.component('Calendar', Calendar);
+app.component('add-button', require('./components/addButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -53,7 +71,18 @@ app.component('chat-component', require('./components/ChatComponent.vue').defaul
 // const app = new Vue({
 //     el: '#app',
 // });
-
+app.config.globalProperties.$moment=moment;
+app.use(store);
+app.use(PrimeVue, {
+    theme: {
+        preset: Aura,
+        options: {
+            prefix: 'p',
+            darkModeSelector: 'system',
+            cssLayer: false
+        }
+    }
+});
 
 app.mount('#app');
 

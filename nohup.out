@@ -1,0 +1,43 @@
+(node:1539130) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[1m[22m
+[1mL A R A V E L  E C H O  S E R V E R[22m
+[1m[22m
+[36mversion 1.6.3[39m
+[36m[39m
+[33m⚠ Starting server in DEV mode...[39m
+[33m[39m
+[32m✔ [39m Running at localhost on port 6001
+[32m✔ [39m Channels are ready.
+[32m✔ [39m Listening for http events...
+[32m✔ [39m Listening for redis events...
+[36m[39m
+[36mServer ready![39m
+[36m[39m
+[36m[2024-10-18T06:57:01.933Z] - 8RcxtOdyMUQPGbj0AAAA joined channel: chat[39m
+[36m[2024-10-18T06:57:01.935Z] - eMIMhy6-1wFU1vPTAAAB joined channel: chat[39m
+[36m[2024-10-18T06:57:27.608Z] - eMIMhy6-1wFU1vPTAAAB left channel: chat (transport close)[39m
+[36m[2024-10-18T06:57:28.797Z] - lB7p1DsEidBUuRdCAAAC joined channel: chat[39m
+[36mChannel: chat[39m
+[36mEvent: App\Events\Message[39m
+(node:1539951) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[1m[22m
+[1mL A R A V E L  E C H O  S E R V E R[22m
+[1m[22m
+[36mversion 1.6.3[39m
+[36m[39m
+[33m⚠ Starting server in DEV mode...[39m
+[33m[39m
+[32m✔ [39m Running at localhost on port 6001
+[32m✔ [39m Channels are ready.
+[32m✔ [39m Listening for http events...
+[32m✔ [39m Listening for redis events...
+[36m[39m
+[36mServer ready![39m
+[36m[39m
+[36m[2024-10-18T07:00:06.923Z] - Xz5ZDyFZ98JCE2sMAAAA joined channel: chat[39m
+[36m[2024-10-18T07:00:07.011Z] - Xz5ZDyFZ98JCE2sMAAAA joined channel: chat[39m
+[36m[2024-10-18T07:00:09.836Z] - 1T-eHuaRql175NvfAAAB joined channel: chat[39m
+[36mChannel: chat[39m
+[36mEvent: App\Events\Message[39m

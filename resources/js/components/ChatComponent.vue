@@ -11,8 +11,8 @@
 
                 <div class="input-group mb-3">
 
-                        <input type="text" class="form-control" placeholder="Input text, please" v-model="message">
-                        <button @click="sendMessage" class="btn btn-primary" type="button">Send text</button>
+                    <input type="text" class="form-control" placeholder="Input text, please" v-model.trim="message">
+                    <button @click="sendMessage" class="btn btn-primary" type="button">Send text</button>
                 </div>
 
             </div>
@@ -28,37 +28,36 @@ export default {
     data() {
         return {
             dataMessages: [],
-            message: '',
-            userSelect: [],
+            message: ''
         };
     },
-    props: ['users','user'],
+
     mounted() {
-        // const socket = io('http://laravel-blog.lobochkin.ru:3000');
-        // socket.on('news-action.'+ this.user.id + ':App\\Events\\PrivateMessage', function(data) {
-        //     console.log(data.message);
-        //     this.dataMessages.push(data.message.user + ': ' + data.message.message);
-        // }.bind(this));
-        // socket.on('news-action.:App\\Events\\PrivateMessage', function(data) {
-        //     console.log(data.message);
-        //     this.dataMessages.push(data.message.user + ': ' + data.message.message);
-        // }.bind(this));
+        window.Echo.channel('chat').listen('Message', ({message}) => { //message название переменной в классе события
+            this.dataMessages.push(message);
+        }); // Message название класса события
+
     },
     methods: {
         sendMessage() {
-            // if (!this.message) {
-            //     return;
-            // }
-            // if (!this.userSelect.length){
-            //     this.userSelect.push('news-action.');
-            // }
-            // axios({
-            //     url: '/start/send-private-message',
-            //     method: 'GET',
-            //     params: { channels: this.userSelect ,message: this.message , user: this.user.email}
-            // }).then((response) => {
-            //     this.message = '';
-            // });
+            if (!this.message) {
+                return;
+            }
+
+            axios.post('/start/message', {
+                body: this.message
+            },
+                {
+                    headers: {
+                        "X-Socket-Id": Echo.socketId(),
+                    }
+                }).then((response) => {
+
+            }).finally(() => {
+                this.dataMessages.push(this.message);
+                this.message = '';
+            });
+
         }
     }
 };

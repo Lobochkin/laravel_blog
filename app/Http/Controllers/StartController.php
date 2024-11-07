@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Message;
 use App\Events\NewEvent;
 use App\Events\NewMessage;
 use App\Events\PrivateMessage;
@@ -123,5 +124,11 @@ class StartController extends Controller
         PrivateMessage::dispatch($request->all());
 
         return $request->all();
+    }
+    public function sendEhoMessage(Request $request)
+    {
+        Message::dispatch($request->input('body'));
+
+        return $request->input('body');
     }
 }

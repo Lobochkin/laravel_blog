@@ -27,7 +27,8 @@
         "vue-template-compiler": "^0.1.0"
     },
     "dependencies": {
-        "@ckeditor/ckeditor5-build-classic": "^41.2.1",
+        "@ckeditor/ckeditor5-build-classic": "^43.3.0",
+        "@primevue/themes": "^4.2.1",
         "add": "^2.0.6",
         "chart.js": "^4.4.3",
         "express": "^4.19.2",
@@ -35,11 +36,15 @@
         "ioredis": "^5.4.1",
         "jquery": "^3.7.1",
         "laravel-echo": "^1.16.1",
+        "moment": "^2.30.1",
         "npm": "^10.2.5",
         "owl.carousel": "^2.3.4",
-        "socket.io": "^4.7.5",
-        "socket.io-client": "^4.7.5",
+        "primeicons": "^7.0.0",
+        "primevue": "^4.2.1",
+        "socket.io": "^4.8.1",
+        "socket.io-client": "^2.4.0",
         "vue-chartjs": "^5.3.1",
+        "vuex": "^4.0.2",
         "yarn": "^1.22.22"
     }
 }
