@@ -8,6 +8,8 @@ export const prices = {
                 type: Array
             },
             csrfToken: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            priceFlat: 22000,
+            priceInet: 500
         };
     },
     getters: {

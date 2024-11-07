@@ -13,7 +13,7 @@
             </form>
 
         </td>
-        <td>{{ arMeter.total }}</td>
+        <td>{{ arMeter.total }} <sup style="position: initial;vertical-align: revert;">{{countWithFlat(arMeter.total)}}</sup></td>
     </tr>
     <popap-component v-model:show="popap">
         <table class="table ">
@@ -76,6 +76,12 @@ export default {
             editMeters: 'meters/editMeters',
             deleteRow: 'meters/deleteRow'
         }),
+        countWithFlat(total){
+            if (total.indexOf("руб") >= 0) {
+                total = total.replace(/[^0-9]/g, '');
+            }
+            return '( '+(total*1 + this.priceFlat+this.priceInet)+' ₽ )';
+        },
         save(){
             this.editMeters({
                 id: this.arMeter.id,
@@ -98,7 +104,9 @@ export default {
     computed: {
         ...mapState({
             arPrice: state => state.prices.arPrice,
-            csrfToken: state => state.prices.csrfToken
+            csrfToken: state => state.prices.csrfToken,
+            priceFlat: state => state.prices.priceFlat,
+            priceInet: state => state.prices.priceInet
         }),
         countTotal() {
             if (!this.arData.date || !this.arData.electric || !this.arData.hot_water || !this.arData.cold_water) {

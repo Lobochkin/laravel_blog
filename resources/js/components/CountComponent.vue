@@ -1,5 +1,5 @@
 <template>
-    <h1 class="count-list__title">Показания счетчика(+ 22000 кв. + 500 инет.)</h1>
+    <h1 class="count-list__title">Показания счетчика</h1>
     <add-button v-if="page===1 || !page"></add-button>
     <table class="table table-striped" v-if="arMeters.length > 0">
         <thead>

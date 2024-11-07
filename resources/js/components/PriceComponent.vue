@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-6">
+        <div class="col-8">
             <h2>Текущий тариф</h2>
             <table class="table ">
                 <thead>
@@ -10,13 +10,15 @@
                     <th scope="col">Электричество</th>
                     <th scope="col">Дата</th>
                     <th scope="col" class="text-right">Действие</th>
+                    <th scope="col">Квартира</th>
+                    <th scope="col">Интернет</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr v-if="arPrice !== null">
-                    <td class="count-cell">{{ arPrice.water }}</td>
-                    <td class="count-cell">{{ arPrice.warming }}</td>
-                    <td class="count-cell">{{ arPrice.electric }}</td>
+                    <td class="count-cell">{{ arPrice.water }} ₽</td>
+                    <td class="count-cell">{{ arPrice.warming }} ₽</td>
+                    <td class="count-cell">{{ arPrice.electric }} ₽</td>
                     <td class="count-cell">{{ dateFormate(arPrice.updated_at) }}</td>
                     <td>
                         <form>
@@ -29,6 +31,8 @@
                                 class="fa fa-trash-o"></i></button>
                         </form>
                     </td>
+                    <td class="count-cell">{{ priceFlat }} ₽</td>
+                    <td class="count-cell">{{ priceInet }} ₽</td>
                 </tr>
                 <tr v-else>
                     <td colspan="5">Загрузка тарифа ...</td>
@@ -213,7 +217,9 @@ export default {
         }),
         ...mapState({
             arPrice: state => state.prices.arPrice,
-            csrfToken: state => state.prices.csrfToken
+            csrfToken: state => state.prices.csrfToken,
+            priceFlat: state => state.prices.priceFlat,
+            priceInet: state => state.prices.priceInet
         })
     }
 };

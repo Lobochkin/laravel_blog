@@ -10,7 +10,7 @@
                     <th>Гор. вода</th>
                     <th>Хол. вода</th>
                     <th class="text-right">Действие</th>
-                    <th>Всего</th>
+                    <th>Всего <sup>{{countTotal !== '-'?'( '+(priceFlat+priceInet + countTotal)+' ₽ )':''}}</sup></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -81,6 +81,8 @@ export default {
         ...mapState({
             arPrice: state => state.prices.arPrice,
             arMeters: state => state.meters.arMeters,
+            priceFlat: state => state.prices.priceFlat,
+            priceInet: state => state.prices.priceInet
         }),
         countTotal(){
             if (!this.date || !this.electric || !this.hot_water || !this.cold_water) {
